@@ -203,7 +203,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     business.trade_type !== 'general'
   )
 
-  const subscriptionStatus = business?.subscription_status ?? null
+  const subscriptionStatus = (business?.subscription_status as SubscriptionStatus) ?? null
 
   const isSubscriptionActive =
     subscriptionStatus === 'active' ||

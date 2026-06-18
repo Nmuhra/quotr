@@ -71,7 +71,7 @@ export function LogoUpload({ onComplete, currentUrl }: LogoUploadProps) {
         const image = await Camera.getPhoto({
           quality: 90,
           allowEditing: true,
-          resultType: CameraResultType.Blob,
+          resultType: CameraResultType.Uri,
           source: CameraSource.Prompt
         })
 

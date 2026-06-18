@@ -1,4 +1,4 @@
-# Web dev (use this 90% of the time)
+# Web dev 
 npm run dev
 
 # Before syncing to native — always build first
