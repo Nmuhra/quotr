@@ -3,12 +3,11 @@
  */
 
 import { useEffect, useState } from 'react'
-import { supabase } from '../../lib/supabase'
-import { useAuth } from '../../features/auth/AuthContext'
-import { useQuoteBuilder } from './store'
-import { Button } from '../../components/ui/Button'
-import { Input } from '../../components/ui/Input'
-import type { Database } from '../../lib/database.types'
+import { supabase } from '../../../lib/supabase'
+import { useAuth } from '../../../features/auth/AuthContext'
+import { useQuoteBuilder } from '../store'
+import { Button } from '../../../components/ui/Button'
+import type { Database } from '../../../lib/database.types'
 
 type LineItemTemplate = Database['public']['Tables']['line_item_templates']['Row']
 

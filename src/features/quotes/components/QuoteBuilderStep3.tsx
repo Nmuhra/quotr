@@ -3,10 +3,10 @@
  */
 
 import { useEffect } from 'react'
-import { supabase } from '../../lib/supabase'
-import { useQuoteBuilder } from './store'
-import { Button } from '../../components/ui/Button'
-import { FormError } from '../../components/ui/FormError'
+import { supabase } from '../../../lib/supabase'
+import { useQuoteBuilder } from '../store'
+import { Button } from '../../../components/ui/Button'
+import { FormError } from '../../../components/ui/FormError'
 
 export function QuoteBuilderStep3() {
   const {

@@ -4,10 +4,9 @@
  */
 
 import { create } from 'zustand'
-import type { Database } from '../lib/database.types'
+import type { Database } from '../../lib/database.types'
 
 type Client = Database['public']['Tables']['clients']['Row']
-type LineItemTemplate = Database['public']['Tables']['line_item_templates']['Row']
 type QuoteLineItem = Database['public']['Tables']['quote_line_items']['Row']
 
 export interface QuoteBuilderState {
@@ -68,7 +67,7 @@ const initialState = {
   error: null,
 }
 
-export const useQuoteBuilder = create<QuoteBuilderState>((set, get) => ({
+export const useQuoteBuilder = create<QuoteBuilderState>((set) => ({
   ...initialState,
 
   setStep: (step) => set({ step }),

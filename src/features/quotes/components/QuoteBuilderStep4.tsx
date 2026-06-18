@@ -2,9 +2,8 @@
  * Quote Builder Step 4: Preview & Settings
  */
 
-import { useQuoteBuilder } from './store'
-import { Button } from '../../components/ui/Button'
-import { Input } from '../../components/ui/Input'
+import { useQuoteBuilder } from '../store'
+import { Button } from '../../../components/ui/Button'
 
 export function QuoteBuilderStep4() {
   const {

@@ -3,12 +3,12 @@
  */
 
 import { useState } from 'react'
-import { supabase } from '../../lib/supabase'
-import { useAuth } from '../../features/auth/AuthContext'
-import { useQuoteBuilder } from './store'
-import { Button } from '../../components/ui/Button'
-import { Input } from '../../components/ui/Input'
-import { FormError } from '../../components/ui/FormError'
+import { supabase } from '../../../lib/supabase'
+import { useAuth } from '../../../features/auth/AuthContext'
+import { useQuoteBuilder } from '../store'
+import { Button } from '../../../components/ui/Button'
+import { Input } from '../../../components/ui/Input'
+import { FormError } from '../../../components/ui/FormError'
 
 export function QuoteBuilderStep5() {
   const { business } = useAuth()
