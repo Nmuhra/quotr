@@ -62,7 +62,10 @@ CREATE TABLE IF NOT EXISTS public.line_item_templates (
   deleted_at timestamp with time zone
 );
 
-CREATE TABLE IF NOT EXISTS public.quotes (
+-- Drop and recreate quotes to ensure schema is correct
+DROP TABLE IF EXISTS public.quotes CASCADE;
+
+CREATE TABLE public.quotes (
   id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   business_id uuid NOT NULL REFERENCES public.businesses(id) ON DELETE CASCADE,
   client_id uuid REFERENCES public.clients(id) ON DELETE SET NULL,
@@ -84,7 +87,11 @@ CREATE TABLE IF NOT EXISTS public.quotes (
   deleted_at timestamp with time zone
 );
 
-CREATE TABLE IF NOT EXISTS public.quote_line_items (
+-- Drop dependent tables to ensure clean schema
+DROP TABLE IF EXISTS public.quote_line_items CASCADE;
+DROP TABLE IF EXISTS public.invoices CASCADE;
+
+CREATE TABLE public.quote_line_items (
   id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   quote_id uuid NOT NULL REFERENCES public.quotes(id) ON DELETE CASCADE,
   description text NOT NULL,
@@ -93,7 +100,7 @@ CREATE TABLE IF NOT EXISTS public.quote_line_items (
   created_at timestamp with time zone NOT NULL DEFAULT now()
 );
 
-CREATE TABLE IF NOT EXISTS public.invoices (
+CREATE TABLE public.invoices (
   id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   business_id uuid NOT NULL REFERENCES public.businesses(id) ON DELETE CASCADE,
   quote_id uuid REFERENCES public.quotes(id) ON DELETE SET NULL,
