@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Quotr</string>
+    <string name="title_activity_main">Quotr</string>
+    <string name="package_name">co.za.quotr</string>
+    <string name="custom_url_scheme">co.za.quotr</string>
+</resources>
